@@ -9,6 +9,10 @@ NS_DEVICE_BEGIN
 class DeviceManager
 {
 public:
+    DeviceManager();
+    
+    ~DeviceManager();
+    
     
 }
 
