@@ -2,13 +2,14 @@
 #define RC_DEVICE_DEVICE_H_
 #include "DeviceMacros.h"
 
-#include <string>
+#include <yh/yh.h>
+USING_NS_YH;
 
 NS_DEVICE_BEGIN
 
 struct input_event;
 
-class Device
+class Device:public Ref
 {
 public:
     enum OpenType

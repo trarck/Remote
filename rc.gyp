@@ -1,6 +1,6 @@
 {
   'targets': [
-  {
+        {
           'target_name': 'libDevice',
           'type': 'static_library',          
           'defines':[
@@ -11,8 +11,10 @@
             'src/device',
           ],
           'sources': [
-            'src/device/Input.h',
-            'src/device/FrameBuffer.h',
+            'src/device/DeviceMacros.h',
+            'src/device/Device.h',
+            'src/device/DeviceManager.h',
+            'src/device/DeviceManager.cpp',            
           ],
           'conditions': [
               ['OS=="win"', {
@@ -20,7 +22,7 @@
                     'WIN32','_WINDOWS'
                   ],
                   'sources': [
-  
+                    'src/device/win/Device.cpp',
                   ]
                 }
              ],
@@ -29,7 +31,7 @@
 
                   ],
                   'sources': [
-   
+                    'src/device/unix/Device.cpp',
                   ]
                 }
              ],
@@ -39,7 +41,7 @@
 
                   ],
                   'sources': [
-
+                    'src/device/unix/Device.cpp',
                   ]
                 }
              ],
@@ -48,7 +50,7 @@
 
                   ],
                   'sources': [
-
+                    'src/device/unix/Device.cpp',
                   ]
                 }
              ],
@@ -57,7 +59,7 @@
 
                   ],
                   'sources': [
-
+                    'src/device/unix/Device.cpp',
                   ]
                 }
              ],
@@ -68,14 +70,6 @@
                   'sources': [
 
                   ]
-                }
-             ],
-             ['yh_library=="static_library"',{
-                  'defines':['YH_STATIC'],
-                }
-             ],
-             ['yh_library=="shared_library"',{
-                  'defines':['YH_USRDLL'],                  
                 }
              ],
              #['OS=="win" and yh_library=="shared_library"', {
@@ -96,15 +90,16 @@
       },
       
       {
-          'target_name': 'libyh',
-          'type': '<(yh_library)',
+          'target_name': 'rc',
+          'type': 'execute',
           
           'defines':[
-            'SQLITE_HAS_CODEC'
+            
           ],
 
           'include_dirs': [
-            'yh/',
+            'src',
+            'src/device'            
           ],
           'sources': [
             
@@ -165,21 +160,7 @@
 
                   ]
                 }
-             ],
-             ['yh_library=="static_library"',{
-                  'defines':['YH_STATIC'],
-                }
-             ],
-             ['yh_library=="shared_library"',{
-                  'defines':['YH_USRDLL'],                  
-                }
-             ],
-             #['OS=="win" and yh_library=="shared_library"', {
-             #     'defines': [
-             #       'SQLITE_API=__declspec(dllexport)'
-             #     ]
-             #   }
-             #]
+             ],            
          ],
          'configurations': {
             'Debug': {
