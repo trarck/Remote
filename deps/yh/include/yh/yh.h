@@ -14,4 +14,8 @@
 #include "platform/Log.h"
 #include "platform/Internals.h"
 
+//collection
+#include "collections/Vector.h"
+#include "collections/Map.h"
+
 #endif //YH_YH_H_

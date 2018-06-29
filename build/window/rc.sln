@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libDevice", "libDevice.vcxproj", "{14972AE8-E541-1883-176B-CFAEE56F2FEB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rc", "rc.vcxproj", "{C9FD5063-D793-0E5D-6E90-78D730BA1F00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14972AE8-E541-1883-176B-CFAEE56F2FEB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{14972AE8-E541-1883-176B-CFAEE56F2FEB}.Debug|Win32.Build.0 = Debug|Win32
+		{14972AE8-E541-1883-176B-CFAEE56F2FEB}.Release|Win32.ActiveCfg = Release|Win32
+		{14972AE8-E541-1883-176B-CFAEE56F2FEB}.Release|Win32.Build.0 = Release|Win32
+		{C9FD5063-D793-0E5D-6E90-78D730BA1F00}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C9FD5063-D793-0E5D-6E90-78D730BA1F00}.Debug|Win32.Build.0 = Debug|Win32
+		{C9FD5063-D793-0E5D-6E90-78D730BA1F00}.Release|Win32.ActiveCfg = Release|Win32
+		{C9FD5063-D793-0E5D-6E90-78D730BA1F00}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

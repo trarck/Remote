@@ -24,10 +24,20 @@ public:
     void close();
     int read(struct input_event* event);
     int write(struct input_event* event);
-    
+
+	inline int getFd()
+	{
+		return _fd;
+	}
+
+	inline std::string& getPath() 
+	{
+		return _path;
+	}
+
 protected:    
-    std::string m_path;
-    int m_fd;
+    std::string _path;
+    int _fd;
     
 }
 

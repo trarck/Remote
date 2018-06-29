@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\device">
+      <UniqueIdentifier>{BF68E219-12AC-1393-5242-E6E71C5CE1CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\device">
+      <UniqueIdentifier>{BF68E219-12AC-1393-5242-E6E71C5CE1CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\device">
+      <UniqueIdentifier>{BF68E219-12AC-1393-5242-E6E71C5CE1CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\device">
+      <UniqueIdentifier>{BF68E219-12AC-1393-5242-E6E71C5CE1CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\device">
+      <UniqueIdentifier>{BF68E219-12AC-1393-5242-E6E71C5CE1CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\device\win">
+      <UniqueIdentifier>{47FC5EC4-15EB-E92F-89D7-AFE51CF838A9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\device\DeviceMacros.h">
+      <Filter>src\device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\device\Device.h">
+      <Filter>src\device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\device\DeviceManager.h">
+      <Filter>src\device</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\src\device\DeviceManager.cpp">
+      <Filter>src\device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\device\win\Device.cpp">
+      <Filter>src\device\win</Filter>
+    </ClCompile>
+    <None Include="..\..\rc.gyp"/>
+  </ItemGroup>
+</Project>

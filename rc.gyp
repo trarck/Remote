@@ -8,6 +8,7 @@
           ],
 
           'include_dirs': [
+            'deps/yh/include',
             'src/device',
           ],
           'sources': [
@@ -22,6 +23,7 @@
                     'WIN32','_WINDOWS'
                   ],
                   'sources': [
+                    'src/device/win/Define.h',
                     'src/device/win/Device.cpp',
                   ]
                 }
@@ -91,7 +93,7 @@
       
       {
           'target_name': 'rc',
-          'type': 'execute',
+          'type': 'executable',
           
           'defines':[
             

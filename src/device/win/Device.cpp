@@ -1,13 +1,14 @@
 #include "Device.h"
 
-#include "InputEvent.h"
+#include "Define.h"
 
 #define INPUT_EVENT_SIZE sizeof(struct input_event)
 
 NS_DEVICE_BEGIN
 
 Device::Device(const std::string& path)
-:m_path(path)
+:_path(path),
+_fd(0)
 {
     
 }

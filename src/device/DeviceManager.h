@@ -3,7 +3,9 @@
 #include "DeviceMacros.h"
 
 #include <yh/yh.h>
+
 #include "Device.h"
+#include "Define.h"
 
 NS_DEVICE_BEGIN
 
@@ -14,12 +16,24 @@ public:
     
     ~DeviceManager();
     
-    void addDevice(std::string& name);
+    void addDevice(const std::string& name);
+
+	void addDevice(const std::string& name,Device.OpenType type);
     
-    void removeDevice(std::string& name);
+    void removeDevice(const std::string& name);
+
+	bool contains(const std::string& name);
     
+	int readEvents(struct input_event* events);
+	int writeEvents(struct input_event* events,int count);
+
+	void generatePollFds();
+
 protected:
     Vector<Device> _devices;
+	struct pollfd* _fds;
+
+	bool _fdsDirty;
 }
 
 NS_DEVICE_END

@@ -18,7 +18,8 @@
 NS_DEVICE_BEGIN
 
 Device::Device(const std::string& path)
-:m_path(path)
+:_path(path),
+_fd(-1)
 {
     
 }
@@ -37,9 +38,9 @@ void Device::open(OpenType type)
             flags=O_RDWR;
             break;
     }
-    m_fd=open(m_path.c_str(),flags);
-    if (m_fd < 0) {
-        fprintf(stderr, "could not open %s, %s\n", m_path.c_str(), strerror(errno));
+    _fd=open(_path.c_str(),flags);
+    if (_fd < 0) {
+        fprintf(stderr, "could not open %s, %s\n", _path.c_str(), strerror(errno));
         return;
     }
     
@@ -48,32 +49,32 @@ void Device::open(OpenType type)
 
 void Device::close()
 {
-    if(m_fd<0)
+    if(_fd<0)
     {
         return;
     }
     
-    close(m_fd);
-    m_fd=-1;
+    close(_fd);
+    _fd=-1;
 }
 
 int Device::read(struct input_event* event)
 {
-    if(m_fd<0 || event==NULL)
+    if(_fd<0 || event==NULL)
     {
         return 0;
     }
     
-    return read(m_fd, event, INPUT_EVENT_SIZE);
+    return read(_fd, event, INPUT_EVENT_SIZE);
 }
 
 int Device::write(struct input_event* event)
 {
-    if(m_fd<0 || event==NULL)
+    if(_fd<0 || event==NULL)
     {
         return 0;
     }
-    return write(m_fd, event, INPUT_EVENT_SIZE);
+    return write(_fd, event, INPUT_EVENT_SIZE);
 }
 
 NS_DEVICE_END
