@@ -1,13 +1,13 @@
-#include "DeviceManager.h"
+#include "InputManager.h"
 	
-DeviceManager::DeviceManager()
+InputManager::InputManager()
 :_fds(NULL),
 _fdsDirty(false)
 {
     
 }
 
-DeviceManager::~DeviceManager()
+InputManager::~InputManager()
 {
 	if (_fds != NULL)
 	{
@@ -15,12 +15,12 @@ DeviceManager::~DeviceManager()
 	}
 }
 
-void DeviceManager::addDevice(const std::string& name)
+void InputManager::addDevice(const std::string& name)
 {
 	addDevice(Device.OpenType.ReadWrite);
 }
 
-void DeviceManager::addDevice(const std::string& name, Device.OpenType type)
+void InputManager::addDevice(const std::string& name, Device.OpenType type)
 {
 	if (contains(name)) 
 	{
@@ -38,7 +38,7 @@ void DeviceManager::addDevice(const std::string& name, Device.OpenType type)
 	//_fdsDirty = true;
 }
 
-void DeviceManager::removeDevice(const std::string& name)
+void InputManager::removeDevice(const std::string& name)
 {
 	for (var iter = _devices.begin(); iter != _devices.end();++iter)
 	{
@@ -51,7 +51,7 @@ void DeviceManager::removeDevice(const std::string& name)
 	//_fdsDirty = true;
 }
 
-bool DeviceManager::contains(const std::string& name)
+bool InputManager::contains(const std::string& name)
 {
 	for (var iter = _devices.begin(); iter != _devices.end(); ++iter)
 	{
@@ -63,7 +63,7 @@ bool DeviceManager::contains(const std::string& name)
 	return false;
 }
 
-int  DeviceManager::readEvents(struct input_event* events)
+int  InputManager::readEvents(struct input_event* events)
 {
 	if (_devices.size() == 0 || data==NULL) return 0;
 
@@ -74,7 +74,7 @@ int  DeviceManager::readEvents(struct input_event* events)
 
 	if (poll(_fds, _devices.size(), -1) < 0)
 	{
-		YHERROR("DeviceManager::readDevice poll error");
+		YHERROR("InputManager::readDevice poll error");
 	}
 	
 	int numRead=0,count=0;
@@ -93,14 +93,14 @@ int  DeviceManager::readEvents(struct input_event* events)
 	return count;
 }
 
-int DeviceManager::writeEvents(struct input_event* events,int count)
+int InputManager::writeEvents(struct input_event* events,int count)
 {
 	for (int i = 0; i < count; ++i) {
 
 	}
 }
 
-void DeviceManager::generatePollFds()
+void InputManager::generatePollFds()
 {
 	//if (!_fdsDirty) return;
 
@@ -109,7 +109,7 @@ void DeviceManager::generatePollFds()
 	struct pollfd* newFds = realloc(_fds, fdsSize);
 	if (newFds == NULL) {
 		//show log
-		YHERROR("out of memory in DeviceManager::generatePollFds");
+		YHERROR("out of memory in InputManager::generatePollFds");
 		return;
 	}
 

@@ -4,17 +4,17 @@
 
 #include <yh/yh.h>
 
-#include "Device.h"
+#include "InputDevice.h"
 #include "Define.h"
 
 NS_DEVICE_BEGIN
 
-class DeviceManager:public Ref
+class InputManager:public Ref
 {
 public:
-    DeviceManager();
+    InputManager();
     
-    ~DeviceManager();
+    ~InputManager();
     
     void addDevice(const std::string& name);
 

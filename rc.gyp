@@ -13,9 +13,10 @@
           ],
           'sources': [
             'src/device/DeviceMacros.h',
-            'src/device/Device.h',
-            'src/device/DeviceManager.h',
-            'src/device/DeviceManager.cpp',            
+            'src/device/Define.h',
+            'src/device/InputDevice.h',
+            'src/device/InputManager.h',
+            'src/device/InputManager.cpp',            
           ],
           'conditions': [
               ['OS=="win"', {
@@ -23,8 +24,8 @@
                     'WIN32','_WINDOWS'
                   ],
                   'sources': [
-                    'src/device/win/Define.h',
-                    'src/device/win/Device.cpp',
+                    'src/device/win/Define-win.h',
+                    'src/device/win/InputDevice.cpp',
                   ]
                 }
              ],
@@ -33,7 +34,7 @@
 
                   ],
                   'sources': [
-                    'src/device/unix/Device.cpp',
+                    
                   ]
                 }
              ],
@@ -43,7 +44,7 @@
 
                   ],
                   'sources': [
-                    'src/device/unix/Device.cpp',
+                    
                   ]
                 }
              ],
@@ -52,7 +53,7 @@
 
                   ],
                   'sources': [
-                    'src/device/unix/Device.cpp',
+                    'src/device/unix/InputDevice.cpp',
                   ]
                 }
              ],
@@ -61,7 +62,7 @@
 
                   ],
                   'sources': [
-                    'src/device/unix/Device.cpp',
+                    
                   ]
                 }
              ],

@@ -1,4 +1,4 @@
-#include "Device.h"
+#include "InputDevice.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,14 +17,14 @@
 
 NS_DEVICE_BEGIN
 
-Device::Device(const std::string& path)
+InputDevice::InputDevice(const std::string& path)
 :_path(path),
 _fd(-1)
 {
     
 }
 
-void Device::open(OpenType type)
+void InputDevice::open(OpenType type)
 {
     int flags=0;
     switch(type){
@@ -47,7 +47,7 @@ void Device::open(OpenType type)
     //TODO get id and version
 }
 
-void Device::close()
+void InputDevice::close()
 {
     if(_fd<0)
     {
@@ -58,7 +58,7 @@ void Device::close()
     _fd=-1;
 }
 
-int Device::read(struct input_event* event)
+int InputDevice::read(struct input_event* event)
 {
     if(_fd<0 || event==NULL)
     {
@@ -68,7 +68,7 @@ int Device::read(struct input_event* event)
     return read(_fd, event, INPUT_EVENT_SIZE);
 }
 
-int Device::write(struct input_event* event)
+int InputDevice::write(struct input_event* event)
 {
     if(_fd<0 || event==NULL)
     {

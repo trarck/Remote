@@ -9,7 +9,7 @@ NS_DEVICE_BEGIN
 
 struct input_event;
 
-class Device:public Ref
+class InputDevice:public Ref
 {
 public:
     enum OpenType
@@ -19,7 +19,7 @@ public:
         ReadWrite
     }
 
-    Device(const std::string& path);
+    InputDevice(const std::string& path);
     void open(OpenType type);
     void close();
     int read(struct input_event* event);
